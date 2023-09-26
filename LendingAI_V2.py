@@ -170,18 +170,18 @@ if selected_opt =='Defaulter App':
                 res=session.call('LENDINGAI_DB.MART.SP_DEFAULTER_VALIDATION_PROC')
                 probability_of_nondefaulter,probability_of_defaulter=math.floor(float(res[7:9]+'.'+res[11])), math.ceil(float(res[18:20]+'.'+res[21]))
                 col9,col10=st.columns(2)
-      with col9:
-        fig = px.bar(                                     
-        x=['No', 'Yes'],
-        y=[probability_of_nondefaulter, probability_of_defaulter],
-        color=['No','Yes'],
-        color_discrete_map = {'Yes': '#00A300', 'No': '#FF4500'},
-        labels={'x': 'Defaulter', 'y': 'Probability'})
-        fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
-        fig.update_layout(title_text='Probability of Customer Defaulter',width=500)
-        for _ in range(6):
-          st.write("")
-        st.plotly_chart(fig,use_container_width=True)
+    with col9:
+      fig = px.bar(                                     
+      x=['No', 'Yes'],
+      y=[probability_of_nondefaulter, probability_of_defaulter],
+      color=['No','Yes'],
+      color_discrete_map = {'Yes': '#00A300', 'No': '#FF4500'},
+      labels={'x': 'Defaulter', 'y': 'Probability'})
+      fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
+      fig.update_layout(title_text='Probability of Customer Defaulter',width=500)
+      for _ in range(6):
+        st.write("")
+      st.plotly_chart(fig,use_container_width=True)
     with col10:
       features=res[28:93].split(',')
       features[0]=features[0][1:]
