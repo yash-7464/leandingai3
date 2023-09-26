@@ -170,7 +170,7 @@ if selected_opt =='Defaulter App':
                 res=session.call('LENDINGAI_DB.MART.SP_DEFAULTER_VALIDATION_PROC')
                 probability_of_nondefaulter,probability_of_defaulter=math.floor(float(res[7:9]+'.'+res[11])), math.ceil(float(res[18:20]+'.'+res[21]))
                 col9,col10=st.columns(2)
-  with col9:
+    with col9:
       fig = px.bar(                                     
       x=['No', 'Yes'],
       y=[probability_of_nondefaulter, probability_of_defaulter],
