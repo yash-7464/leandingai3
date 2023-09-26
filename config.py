@@ -12,6 +12,6 @@ connection_parameters = {
 
 "database": "LENDINGAI_DB",
 
-"schema": "RAW"
+"schema": "BASE"
 
 }
