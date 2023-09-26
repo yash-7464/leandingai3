@@ -40,33 +40,33 @@ default_index=0, orientation="horizontal",icons=None,
 if selected_opt == 'Predictor App':
     col1, col2=st.columns([3.2,6.8])
     with col1:
-        col3,col4=st.columns([3,7])
-        with col3:
-            for _ in range(2):
-               st.write("") 
-            st.write('Experience   :')
-            for _ in range(3):
-               st.write("")
-            st.write('Type of Loan :')
-            for _ in range(2):
-               st.write("")
-            st.write('Age          :')
-            for _ in range(3):
-               st.write("")
-            st.write('Loan Amount  :')
-            for _ in range(3):
-               st.write("")
-            st.write('Tenure       :')
-        with col4:
-            employment_length = st.selectbox('', ['< 1 year', '1 year', '2 years', '3 years', '4 years', '5 years', '6 years', '7 years', '8 years', '9 years', '10+ years'])
-            loan_title = st.selectbox('', ['Major purchase', 'Debt consolidation', 'Home improvement', 'Moving and relocation', 'Home buying', 'Business', 'Vacation', 'Car financing', 'Medical expenses', 'Credit card refinancing'])
-            age = st.selectbox('', ['< 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
-            amount_requested = st.number_input('', min_value=0,value=1000)
-            tenure = st.selectbox('', ['36 Months','60 Months'])
-        col5,col6,col7=st.columns([1,3,1])
-        with col6:
+    col3,col4=st.columns([3,7])
+    with col3:
+        for _ in range(2):
+            st.write("") 
+        st.write('Experience   :')
+        for _ in range(3):
             st.write("")
-            btn=st.button(':blue[Predict]',use_container_width=True)
+        st.write('Type of Loan :')
+        for _ in range(2):
+            st.write("")
+        st.write('Age          :')
+        for _ in range(3):
+            st.write("")
+        st.write('Loan Amount  :')
+        for _ in range(3):
+            st.write("")
+        st.write('Tenure       :')
+    with col4:
+      employment_length = st.selectbox('', ['< 1 year', '1 year', '2 years', '3 years', '4 years', '5 years', '6 years', '7 years', '8 years', '9 years', '10+ years'])
+      loan_title = st.selectbox('', ['Major purchase', 'Debt consolidation', 'Home improvement', 'Moving and relocation', 'Home buying', 'Business', 'Vacation', 'Car financing', 'Medical expenses', 'Credit card refinancing'])
+      age = st.selectbox('', ['< 18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
+      amount_requested = st.number_input('', min_value=0,value=1000)
+      tenure = st.selectbox('', ['36 Months','60 Months'])
+    col5,col6,col7=st.columns([1,3,1])
+    with col6:
+      st.write("")
+      btn=st.button(':blue[Predict]',use_container_width=True)
     with col2:
         if btn:
             lst = [480, 50, employment_length,loan_title,amount_requested]
@@ -96,54 +96,54 @@ if selected_opt == 'Predictor App':
                             valign='bottom' if [probability_of_approval, probability_of_rejection][i] > 50 else 'top',
                         )
             col11,col12,col13=st.columns([1,4,1])
-            with col12:
-                for _ in range(2):
-                    st.write("")
-                st.plotly_chart(fig, use_container_width=True)
+      with col12:
+        for _ in range(2):
+          st.write("")
+        st.plotly_chart(fig, use_container_width=True)
 if selected_opt =='Defaulter App':
     col1, col2=st.columns([2.8,7.2])
     with col1:
         col3,col4=st.columns([3.8,6.2])
-        with col3:
-            for _ in range(2):
-               st.write("") 
-            st.write('Loan Amount:')
-            for _ in range(3):
-               st.write("")
-            st.write('Home Ownership:')
-            for _ in range(3):
-               st.write("")
-            st.write('Annual Income:')
-            for _ in range(2):
-               st.write("")
-            st.write('Type of Loan:')
-            for _ in range(3):
-               st.write("")
-            st.write('Interest Rate:')
-            for _ in range(3):
-               st.write("")
-            st.write('Credit Score:')
-            for _ in range(2):
-               st.write("")
-            st.write('Tenure:')
-            for _ in range(2):
-               st.write("")
-            st.write('Experience:')
-        with col4:
-            loan_amnt = st.number_input('',value=10000)
-            home_ownership = st.selectbox('',('OWN', 'RENT', 'MORTGAGE','ANY'))
-            annual_income = st.number_input('', value=120000)
-            loan_type = st.selectbox('',
-            ('Credit card refinancing','Debt consolidation','Home improvement','Major purchase','Business','Medical expenses','Moving and relocation','Vacation','Home buying','Green loan','Car financing','Other'))
-            int_rate=st.number_input('',value=10)
-            credit_score=st.number_input('',value=0)
-            term = st.radio("",["36 months", "60 months"],horizontal=True)
-            Employee_Expe = ["< 1 year","2 years","3 years","4 years","5 years","6 years","7 years","8 years","9 years","10+ years"]
-            emp_lengt = st.select_slider('', options=Employee_Expe)
-        col5,col6,col7=st.columns([1,3,1])
-        with col6:
-            st.write("")
-            btn=st.button(':blue[Check]',use_container_width=True)
+    with col3:
+      for _ in range(2):
+        st.write("") 
+      st.write('Loan Amount:')
+      for _ in range(3):
+        st.write("")
+      st.write('Home Ownership:')
+      for _ in range(3):
+          st.write("")
+      st.write('Annual Income:')
+      for _ in range(2):
+          st.write("")
+      st.write('Type of Loan:')
+      for _ in range(3):
+          st.write("")
+      st.write('Interest Rate:')
+      for _ in range(3):
+          st.write("")
+      st.write('Credit Score:')
+      for _ in range(2):
+          st.write("")
+      st.write('Tenure:')
+      for _ in range(2):
+          st.write("")
+      st.write('Experience:')
+    with col4:
+      loan_amnt = st.number_input('',value=10000)
+      home_ownership = st.selectbox('',('OWN', 'RENT', 'MORTGAGE','ANY'))
+      annual_income = st.number_input('', value=120000)
+      loan_type = st.selectbox('',
+        ('Credit card refinancing','Debt consolidation','Home improvement','Major purchase','Business','Medical expenses','Moving and relocation','Vacation','Home buying','Green loan','Car financing','Other'))
+      int_rate=st.number_input('',value=10)
+      credit_score=st.number_input('',value=0)
+      term = st.radio("",["36 months", "60 months"],horizontal=True)
+      Employee_Expe = ["< 1 year","2 years","3 years","4 years","5 years","6 years","7 years","8 years","9 years","10+ years"]
+      emp_lengt = st.select_slider('', options=Employee_Expe)
+    col5,col6,col7=st.columns([1,3,1])
+    with col6:
+      st.write("")
+      btn=st.button(':blue[Check]',use_container_width=True)
     def is_valid_data2(credit_score,loan_amnt,annual_income,int_rate):
         if(0<=credit_score<=900  and loan_amnt>=0 and annual_income>=0 and int_rate>=0):
             return True
@@ -170,33 +170,33 @@ if selected_opt =='Defaulter App':
                 res=session.call('LENDINGAI_DB.MART.SP_DEFAULTER_VALIDATION_PROC')
                 probability_of_nondefaulter,probability_of_defaulter=math.floor(float(res[7:9]+'.'+res[11])), math.ceil(float(res[18:20]+'.'+res[21]))
                 col9,col10=st.columns(2)
-                with col9:
-                    fig = px.bar(                                     
-                    x=['No', 'Yes'],
-                    y=[probability_of_nondefaulter, probability_of_defaulter],
-                    color=['No','Yes'],
-                    color_discrete_map = {'Yes': '#00A300', 'No': '#FF4500'},
-                    labels={'x': 'Defaulter', 'y': 'Probability'})
-                    fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
-                    fig.update_layout(title_text='Probability of Customer Defaulter',width=500)
-                    for _ in range(6):
-                        st.write("")
-                    st.plotly_chart(fig,use_container_width=True)
-                    with col10:
-                        features=res[28:93].split(',')
-                        features[0]=features[0][1:]
-                        features[-1]=features[-1][:-1]
-                        importances=res[93:].split(',')
-                        importances[0]=importances[0][1:]
-                        importances[-1]=importances[-1][:-1]
-                        df=pd.DataFrame(list(zip(features,importances)),columns=['Features','Importance'])
-                        fig = px.bar(df, x="Importance", y="Features", orientation='h')
-                        fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
-                        fig.update_layout(title_text='Top 5 Features Influencing Prediction',width=500)
-                        #fig.update_layout(yaxis=dict(autorange="reversed"))
-                        for _ in range(6):
-                            st.write("")
-                        st.plotly_chart(fig,use_container_width=True)
+      with col9:
+        fig = px.bar(                                     
+        x=['No', 'Yes'],
+        y=[probability_of_nondefaulter, probability_of_defaulter],
+        color=['No','Yes'],
+        color_discrete_map = {'Yes': '#00A300', 'No': '#FF4500'},
+        labels={'x': 'Defaulter', 'y': 'Probability'})
+        fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
+        fig.update_layout(title_text='Probability of Customer Defaulter',width=500)
+        for _ in range(6):
+          st.write("")
+        st.plotly_chart(fig,use_container_width=True)
+    with col10:
+      features=res[28:93].split(',')
+      features[0]=features[0][1:]
+      features[-1]=features[-1][:-1]
+      importances=res[93:].split(',')
+      importances[0]=importances[0][1:]
+      importances[-1]=importances[-1][:-1]
+      df=pd.DataFrame(list(zip(features,importances)),columns=['Features','Importance'])
+      fig = px.bar(df, x="Importance", y="Features", orientation='h')
+      fig.update_traces(marker_line_color='black', marker_line_width=1,hovertemplate=None)
+      fig.update_layout(title_text='Top 5 Features Influencing Prediction',width=500)
+      #fig.update_layout(yaxis=dict(autorange="reversed"))
+      for _ in range(6):
+        st.write("")
+      st.plotly_chart(fig,use_container_width=True)
             else:
                 with col1:
                     st.error("Entered Invalid data, Please check your Inputs...")
