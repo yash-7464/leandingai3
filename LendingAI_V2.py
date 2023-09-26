@@ -95,7 +95,7 @@ if selected_opt == 'Predictor App':
                             align='center',
                             valign='bottom' if [probability_of_approval, probability_of_rejection][i] > 50 else 'top',
                         )
-              col11,col12,col13=st.columns([1,4,1])
+            col11,col12,col13=st.columns([1,4,1])
       with col12:
         for _ in range(2):
           st.write("")
