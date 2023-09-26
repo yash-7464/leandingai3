@@ -40,7 +40,7 @@ default_index=0, orientation="horizontal",icons=None,
 if selected_opt == 'Predictor App':
     col1, col2=st.columns([3.2,6.8])
     with col1:
-    col3,col4=st.columns([3,7])
+      col3,col4=st.columns([3,7])
     with col3:
         for _ in range(2):
             st.write("") 
